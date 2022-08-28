@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
-import os
-
 from flask import Flask, redirect, request
 
-from app import blueprints
-from app.jinja import register_jinja_mapping
+from src.web import blueprints
+from src.web.jinja import register_jinja_mapping
 
 
 def init_config(app: "Flask"):
-    app.config.from_object("conf.default")
+    app.config.from_object("src.infra.config.default")
     # app.config.from_pyfile('config.py')
     # app.config.from_object(f"config.{os.environ.get('APP_CONFIG')}")
 

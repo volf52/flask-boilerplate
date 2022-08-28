@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 
-from app.jinja.context_processor import register_context_processor
-from app.jinja.filters import register_filters
+from src.web.jinja.context_processor import register_context_processor
+from src.web.jinja.filters import register_filters
 
 
 def register_jinja_mapping(app: "Flask"):

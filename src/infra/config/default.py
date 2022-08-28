@@ -11,7 +11,7 @@ FLASK_STRICT_SLASHES = True
 CACHE_TYPE = "NullCache"
 
 # Blueprints configuration. Only change this at your own risk.
-BLUEPRINTS_DIRECTORY = "app/blueprints"
+BLUEPRINTS_DIRECTORY = "src/web/blueprints"
 BLUEPRINTS_BOILERPLATE = BLUEPRINTS_DIRECTORY + "/__boilerplate__"
 BLUEPRINTS_VIEW_STYLES = [
     ["None", ""],
