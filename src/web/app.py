@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, redirect, request
+from flask_restful import Api
 
-from src.web import blueprints
-from src.web.jinja import register_jinja_mapping
+from src.web.controllers import register_routes
 
 
 def init_config(app: "Flask"):
@@ -23,7 +23,7 @@ def create_app():
     # Cache init
 
     # Jinja mapping
-    register_jinja_mapping(app)
+    # register_jinja_mapping(app)
 
     # debug toolbar ext
 
@@ -39,7 +39,8 @@ def create_app():
 
     # register error handlers
 
-    blueprints.register_blueprints(app)
+    api = Api(app)
+    register_routes(api)
 
     # init cli app
 
