@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from flask_restful import Api
+from fastapi import FastAPI
 
-from src.web.controllers.health import HealthController
+from src.web.controllers.health import router as heath_router
 
 
-def register_routes(api: "Api"):
-    api.add_resource(HealthController, "/health")
+def register_routes(api: "FastAPI"):
+    api.include_router(heath_router)

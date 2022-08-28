@@ -7,8 +7,9 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Flask = {extras = ["async"], version = "^2.2.2"}
-Flask-RESTful = "^0.3.9"
+fastapi = "^0.81.0"
+hypercorn = {extras = ["h3"], version = "^0.13.2"}
+uvloop = "^0.16.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.971"

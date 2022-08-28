@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from flask_restful import Api, Resource
+from fastapi import APIRouter
+
+router = APIRouter()
 
 
-class HealthController(Resource):
-    def get(self):
-        return {"status": "ok"}
+@router.get("/health")
+async def health():
+    return {"status": "ok"}
