@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "flask-boilerplate"
+name = "pyddd"
 version = "0.1.0"
-description = "Personal boilerplate for Flask projects"
+description = "Personal boilerplate for FastAPI DDD projects"
 authors = ["Arslan <rslnkrmt2552@gmail.com>"]
 license = "MIT"
 
