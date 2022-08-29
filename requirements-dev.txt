@@ -34,9 +34,9 @@ aioquic==0.9.20; python_version >= "3.7" \
 anyio==3.6.1; python_version >= "3.7" and python_full_version >= "3.6.2" \
     --hash=sha256:cb29b9c70620506a9a8f87a309591713446953302d7d995344d0d7c6c0c9a7be \
     --hash=sha256:413adf95f93886e442aea925f3ee43baa5a765a64a0f52c6081894f9992fdd0b
-astroid==2.12.4; python_full_version >= "3.7.2" \
-    --hash=sha256:af71cdc0775b6e4d88076746620e2c8cd1bf4533a9977cfdd00eeea97d95530c \
-    --hash=sha256:39fa822c82dc112f5072a208ddf01c58184043aa90e3e469786fa0520c71aaa7
+astroid==2.12.5; python_full_version >= "3.7.2" \
+    --hash=sha256:d612609242996c4365aeb0345e61edba34363eaaba55f1c0addf6a98f073bef6 \
+    --hash=sha256:396c88d0a58d7f8daadf730b2ce90838bf338c6752558db719ec6f99c18ec20e
 atomicwrites==1.4.1; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.4.0" \
     --hash=sha256:81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11
 attrs==22.1.0; python_version >= "3.7" \
@@ -184,6 +184,7 @@ mypy-extensions==0.4.3; python_version >= "3.6" and python_full_version >= "3.6.
 packaging==21.3; python_version >= "3.7" \
     --hash=sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522 \
     --hash=sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
+pastel==0.2.1; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.7"
 pathspec==0.9.0; python_full_version >= "3.6.2" \
     --hash=sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a \
     --hash=sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1
@@ -191,6 +192,9 @@ platformdirs==2.5.2; python_version >= "3.7" and python_full_version >= "3.7.2"
 pluggy==1.0.0; python_version >= "3.7" \
     --hash=sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3 \
     --hash=sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159
+poethepoet==0.16.0; python_version >= "3.7" \
+    --hash=sha256:87482ea8bba4e5db4abbd8e6360baee73b2ce0f3d5f5e99e81cdfa39d72d118f \
+    --hash=sha256:6455aec39f198be92dbf210a4416e1635119e967204c092b431c8b10024db1d1
 priority==2.0.0; python_full_version >= "3.6.1" and python_version >= "3.7" \
     --hash=sha256:6f8eefce5f3ad59baf2c080a664037bb4725cd0a790d53d59ab4059288faf6aa \
     --hash=sha256:c965d54f1b8d0d0b19479db3924c7c36cf672dbf2aec92d43fbdaf4492ba18c0
