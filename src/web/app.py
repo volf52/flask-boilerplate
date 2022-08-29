@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from fastapi import FastAPI
+from fastapi.responses import ORJSONResponse
 
 from src.web.controllers import register_routes
 
@@ -10,7 +11,7 @@ from src.web.controllers import register_routes
 
 
 def create_app():
-    app = FastAPI(title="PythonDDD", debug=True)
+    app = FastAPI(title="PythonDDD", debug=True, default_response_class=ORJSONResponse)
 
     # init_config(app)
 

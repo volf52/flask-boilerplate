@@ -7,9 +7,10 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.81.0"
 hypercorn = {extras = ["h3"], version = "^0.13.2"}
 uvloop = "^0.16.0"
+orjson = "^3.8.0"
+fastapi = "^0.81.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.971"
@@ -29,3 +30,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 test = "python -m pytest tests"
+
+[tool.isort]
+profile = "black"
+known_third_party = ["fastapi", "pydantic", "starlette", "uvloop"]
