@@ -11,6 +11,7 @@ hypercorn = {extras = ["h3"], version = "^0.13.2"}
 uvloop = "^0.16.0"
 orjson = "^3.8.0"
 fastapi = "^0.81.0"
+loguru = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.971"
@@ -53,6 +54,9 @@ sort = "isort -- src server.py"
 fmt = "black -- src server.py"
 lint = "flakeheaven lint -- src tests server.py"
 start = "python server.py"
+
+[tool.flake8]
+max-line-length = 88
 
 [tool.isort]
 profile = "black"
