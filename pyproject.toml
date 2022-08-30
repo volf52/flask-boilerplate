@@ -33,4 +33,85 @@ test = "python -m pytest tests"
 
 [tool.isort]
 profile = "black"
+src_paths = ["src"]
 known_third_party = ["fastapi", "pydantic", "starlette", "uvloop"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+)/
+'''
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "-vv --tb=short"
+norecursedirs = [
+    ".tox",
+    ".git",
+    "*/migrations/*",
+    "*/static/*",
+    "docs",
+    "venv",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "secondary: mark tests that use functionality tested in the same file (deselect with '-m \"not secondary\"')"
+]
+filterwarnings = [
+  "error",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    'pragma: no cover',
+
+    # Type checking can not be tested
+    'if TYPE_CHECKING:',
+
+    # Ignore the Abstract classes definition
+    'raise NotImplementedError',
+]
+
+[tool.mypy]
+show_error_codes = true
+follow_imports = "silent"
+ignore_missing_imports = false
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+warn_unused_configs = true
+disallow_subclassing_any = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+plugins = [
+  # "pydantic.mypy"
+]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
