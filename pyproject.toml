@@ -30,6 +30,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 test = "python -m pytest tests"
+tc = "mypy src server.py"
 
 [tool.isort]
 profile = "black"
