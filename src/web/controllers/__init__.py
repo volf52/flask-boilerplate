@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from fastapi import FastAPI
 
-from src.web.controllers.health import router as heath_router
+from src.web.controllers.health_controller import router as heath_router
 
 
 def register_routes(api: "FastAPI") -> None:

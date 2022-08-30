@@ -52,6 +52,7 @@ tc = "dmypy run -- src server.py"
 sort = "isort -- src server.py"
 fmt = "black -- src server.py"
 lint = "flakeheaven lint -- src tests server.py"
+start = "python server.py"
 
 [tool.isort]
 profile = "black"

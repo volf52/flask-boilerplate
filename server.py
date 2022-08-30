@@ -45,6 +45,6 @@ if __name__ == "__main__":
         serve(
             application,
             hypercorn_config,
-            shutdown_trigger=shutdown_event.wait,
+            # shutdown_trigger=shutdown_event.wait,
         )
     )
