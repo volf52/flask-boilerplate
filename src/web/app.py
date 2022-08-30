@@ -4,25 +4,15 @@ from fastapi.responses import ORJSONResponse
 
 from src.web.controllers import register_routes
 
-# def init_config(app: "Flask"):
-#     app.config.from_object("src.infra.config.default")
-#     # app.config.from_pyfile('config.py')
-# app.config.from_object(f"config.{os.environ.get('APP_CONFIG')}")
 
-
-def create_app():
+def create_app():  # noqa: ANN201
     app = FastAPI(title="PythonDDD", debug=True, default_response_class=ORJSONResponse)
-
-    # init_config(app)
 
     # Sentry init
 
     # Db Init
 
     # Cache init
-
-    # Jinja mapping
-    # register_jinja_mapping(app)
 
     # debug toolbar ext
 

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import pytest
-from httpx import AsyncClient
 
 
 async def test_health(test_client):

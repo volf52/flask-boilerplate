@@ -18,7 +18,8 @@ application = create_app()
 shutdown_event = asyncio.Event()
 
 
-def _signal_handler(*_: Any) -> None:
+def _signal_handler(*_: Any) -> None:  # noqa: ANN201,ANN401
+
     shutdown_event.set()
 
 
@@ -31,7 +32,7 @@ def get_event_loop() -> asyncio.AbstractEventLoop:
     return loop
 
 
-def setup_signal_handlers(loop: asyncio.AbstractEventLoop):
+def setup_signal_handlers(loop: asyncio.AbstractEventLoop) -> None:
     loop.add_signal_handler(signal.SIGTERM, _signal_handler)
 
 
@@ -41,5 +42,9 @@ if __name__ == "__main__":
     setup_signal_handlers(loop)
 
     loop.run_until_complete(
-        serve(application, hypercorn_config, shutdown_trigger=shutdown_event.wait)
+        serve(
+            application,
+            hypercorn_config,
+            shutdown_trigger=shutdown_event.wait,
+        )
     )
