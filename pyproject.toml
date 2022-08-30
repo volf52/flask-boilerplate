@@ -229,5 +229,5 @@ pylint = [
             # configure the test.
 ]
 
-[tool.flakeheaven.exceptions."*.controller.py"]
+[tool.flakeheaven.exceptions."*_controller.py"]
 flake8-annotations = ["-ANN201"]

@@ -18,8 +18,11 @@ application = create_app()
 shutdown_event = asyncio.Event()
 
 
-def _signal_handler(*_: Any) -> None:  # noqa: ANN201,ANN401
+async def shutdown_trigger():
+    await shutdown_event.wait()
 
+
+def _signal_handler(*_: Any) -> None:  # noqa: ANN201,ANN401
     shutdown_event.set()
 
 
@@ -45,6 +48,6 @@ if __name__ == "__main__":
         serve(
             application,
             hypercorn_config,
-            # shutdown_trigger=shutdown_event.wait,
+            shutdown_trigger=shutdown_trigger,
         )
     )
