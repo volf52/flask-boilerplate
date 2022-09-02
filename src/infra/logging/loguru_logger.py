@@ -5,10 +5,14 @@ import sys
 from pprint import pformat
 from typing import Any
 
+from antidote import implements
+
 # if you dont like imports of private modules
 # you can move it to typing.py module
 from loguru import logger
 from loguru._defaults import LOGURU_FORMAT
+
+from src.app import AppLogger
 
 
 class InterceptHandler(logging.Handler):
@@ -62,3 +66,15 @@ def init_logging():
     logger.configure(
         handlers=[{"sink": sys.stdout, "level": logging.DEBUG, "format": format_record}]
     )
+
+
+@implements.protocol[AppLogger]()
+class LoguruLogger(AppLogger):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def info(self, *args: Any) -> None:
+        logger.info(*args)
+
+    def debug(self, *args: Any) -> None:
+        logger.debug(*args)

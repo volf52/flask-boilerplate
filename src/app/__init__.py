@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
-from app.app_logger import AppLogger
+from src.app.app_logger import AppLogger
 
 __all__ = ["AppLogger"]
