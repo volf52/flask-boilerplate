@@ -21,11 +21,14 @@ def get_logger() -> Logger:
 
 @implements.protocol[AppLogger]()
 class LoggerService(AppLogger):
-    def info(*args: Any) -> None:
+    def __init__(self) -> None:
+        super().__init__()
+
+    def info(self, *args: Any) -> None:
         logger.info(*args)
 
-    def debug(*args: Any) -> None:
+    def debug(self, *args: Any) -> None:
         logger.debug(*args)
 
 
-__all__ = ["init_logging", "get_logger", "LoggerService"]
+__all__ = ["init_logging", "LoggerService"]
