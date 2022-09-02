@@ -135,5 +135,7 @@ dmypy.json
 
 db.sqlite
 config/config.ini
+# lint
+.ruff_cache
 
 .env
