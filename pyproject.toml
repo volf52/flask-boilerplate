@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pyddd"
+name = "hexa-fastapi"
 version = "0.1.0"
 description = "Personal boilerplate for FastAPI DDD projects"
 authors = ["Arslan <rslnkrmt2552@gmail.com>"]
@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-hypercorn = {extras = ["h3"], version = "^0.13.2"}
+hypercorn = { extras = ["h3"], version = "^0.13.2" }
 uvloop = "^0.16.0"
 orjson = "^3.8.0"
 fastapi = "^0.81.0"
@@ -89,32 +89,23 @@ exclude = '''
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 addopts = "-vv --tb=short"
-norecursedirs = [
-    ".tox",
-    ".git",
-    "*/migrations/*",
-    "*/static/*",
-    "docs",
-    "venv",
-]
+norecursedirs = [".tox", ".git", "*/migrations/*", "*/static/*", "docs", "venv"]
 markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-    "secondary: mark tests that use functionality tested in the same file (deselect with '-m \"not secondary\"')"
+  "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+  "secondary: mark tests that use functionality tested in the same file (deselect with '-m \"not secondary\"')",
 ]
-filterwarnings = [
-  "error",
-]
+filterwarnings = ["error"]
 
 [tool.coverage.report]
 exclude_lines = [
-    # Have to re-enable the standard pragma
-    'pragma: no cover',
+  # Have to re-enable the standard pragma
+  'pragma: no cover',
 
-    # Type checking can not be tested
-    'if TYPE_CHECKING:',
+  # Type checking can not be tested
+  'if TYPE_CHECKING:',
 
-    # Ignore the Abstract classes definition
-    'raise NotImplementedError',
+  # Ignore the Abstract classes definition
+  'raise NotImplementedError',
 ]
 
 [tool.mypy]
@@ -177,12 +168,12 @@ flake8-pytest-style = ["+*"]
 flake8-simplify = ["+*"]
 flake8-use-fstring = [
   "+*",
-  '-FS003' # f-string missing prefix
+  '-FS003', # f-string missing prefix
 ]
 #flake8-typing-imports = [
 #  "+*",
 #  "-TYP001", # guard import by `if False:  # TYPE_CHECKING`: TYPE_CHECKING (not in
-             #   3.5.0, 3.5.1). We don't support Python 3.5
+#   3.5.0, 3.5.1). We don't support Python 3.5
 #  "-TYP002", # @overload is broken in <3.5.2, but we don't support Python 3.5
 #]
 flake8-variables-names = ["+*"]
@@ -190,13 +181,13 @@ dlint = ["+*"]
 pylint = [
   "+*",
   "-C0411", # %s should be placed before %s,
-            # see https://github.com/PyCQA/pylint/issues/2175 and https://github.com/PyCQA/pylint/issues/1797
+  # see https://github.com/PyCQA/pylint/issues/2175 and https://github.com/PyCQA/pylint/issues/1797
   "-R0903", # Too few methods warning, but if you define an interface with just one
-            # method that's fine
+  # method that's fine
   "-W1203", # Use %s formatting in logging functions. Deprecated rule in favor of
-            # f-strings.
+  # f-strings.
   "-W1201", # Use lazy % formatting in logging functions. Deprecated rule in favor of
-            # f-strings.
+  # f-strings.
   "-C0301", # Lines too long. Already covered by E501.
 ]
 mccabe = ["+*"]
@@ -204,8 +195,8 @@ pep8-naming = ["+*"]
 pycodestyle = [
   "+*",
   "-W503", # No longer applies, incompatible with newer version of PEP8
-           # see https://github.com/PyCQA/pycodestyle/issues/197
-           # and https://github.com/psf/black/issues/113
+  # see https://github.com/PyCQA/pycodestyle/issues/197
+  # and https://github.com/psf/black/issues/113
 ]
 pyflakes = [
   "+*",
@@ -227,10 +218,10 @@ flake8-annotations = [
 ]
 pylint = [
   "-R0201", # Method could be a function. Raised because the methods of a test class
-            # don't use the self object, which is not wrong.
+  # don't use the self object, which is not wrong.
   "-W0613", # Unused argument in function, but in tests there are fixtures that even
-            # though they are not used in the function directly, they are used to
-            # configure the test.
+  # though they are not used in the function directly, they are used to
+  # configure the test.
 ]
 
 [tool.flakeheaven.exceptions."*_controller.py"]
