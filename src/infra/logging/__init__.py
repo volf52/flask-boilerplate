@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-from functools import lru_cache
+from __future__ import annotations
 
-from loguru import logger
+from src.infra.logging.loguru_logger import LoguruLogger, init_logging
 
-
-@lru_cache(maxsize=1)  # singleton
-def get_logger():  # ignore: type
-    return logger
+__all__ = ["init_logging", "LoguruLogger"]

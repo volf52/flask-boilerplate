@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
-from logging import Logger
-from typing import Any
 
+from antidote import inject, wire
 from classy_fastapi import Routable, get
 
-from src.infra.logging import get_logger
-
-# logger = logging.getLogger("HealthController")
+from src.app import AppLogger
 
 
+@wire
 class HealthRouter(Routable):
-    logger: Logger
+    logger: AppLogger  # = world[AppLogger]
 
-    def __init__(self, logger: Any = get_logger()) -> None:
+    def __init__(self, logger: AppLogger = inject.me()) -> None:
         super().__init__()
 
         self.logger = logger
