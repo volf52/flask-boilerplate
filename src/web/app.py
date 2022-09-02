@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from src.infra.logging.loguru_logger import init_logging
+from src.infra.logging import init_logging
 from src.web.controllers import register_routes
 
 

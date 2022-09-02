@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
-from logging import Logger
 from typing import Any
 
+from antidote import world
 from classy_fastapi import Routable, get
 
+from src.app import AppLogger
 from src.infra.logging import get_logger
-
-# logger = logging.getLogger("HealthController")
 
 
 class HealthRouter(Routable):
-    logger: Logger
+    logger = world[AppLogger]
 
     def __init__(self, logger: Any = get_logger()) -> None:
         super().__init__()

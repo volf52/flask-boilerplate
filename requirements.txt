@@ -31,6 +31,9 @@ aioquic==0.9.20 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:e3a95dc79a12c7f63ce4abe089541a6c7cc5c77ee6daf94ac8658cd5bbac8c72 \
     --hash=sha256:ec436aaace997b846b01e5200edbf7e3e56b91826a144efb9748fd8ddd332bbe \
     --hash=sha256:f24878cd08fda8d9b14cd2dcd2173bcdd985e96585eb94f58f80a9db3be47921
+antidote==2.0.0 ; python_version >= "3.10" and python_version < "4" \
+    --hash=sha256:437ce4a812ef26550ca1cf4037ffafa65f5a3a7f2dde27f5f5aad743b9463bae \
+    --hash=sha256:e2f5c31851f577b380ffa6212ee681d2ad0fa263eed4f2fa1adde0163dc6e950
 anyio==3.6.1 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:413adf95f93886e442aea925f3ee43baa5a765a64a0f52c6081894f9992fdd0b \
     --hash=sha256:cb29b9c70620506a9a8f87a309591713446953302d7d995344d0d7c6c0c9a7be
@@ -291,7 +294,7 @@ starlette==0.19.1 ; python_version >= "3.10" and python_version < "4.0" \
 toml==0.10.2 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b \
     --hash=sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
-typing-extensions==4.3.0 ; python_version >= "3.10" and python_version < "4.0" \
+typing-extensions==4.3.0 ; python_version >= "3.10" and python_version < "4" \
     --hash=sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02 \
     --hash=sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6
 uvloop==0.16.0 ; python_version >= "3.10" and python_version < "4.0" \
